@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Password Manager & Generator</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container" id="home">
+        <div class="password-generator">
+            <h2>Password Generator</h2>
+            <div class="form-group">
+                <label for="length">Password Length:</label>
+                <input type="number" id="length" min="4" max="32" value="12">
+            </div>
+            <button onclick="generatePassword()">Generate</button>
+            <input type="text" id="generated-password" readonly>
+        </div>
+
+        <div class="password-manager">
+            <h2>Saved Passwords</h2>
+            <form id="password-form" onsubmit="savePassword(event)">
+                <div class="form-group">
+                    <input type="text" id="service" placeholder="website Name" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit">Save</button>
+            </form>
+            <ul id="password-list"></ul>
+        </div>
+    </div>
+
+    <section id="about" class="info-section">
+        <h2>About</h2>
+        <p>This password manager allows you to generate secure passwords and store them for different services. Keep your accounts safe with ease!</p>
+    </section>
+
+    <section id="contact" class="info-section">
+        <h2>Contact</h2>
+        <p>For inquiries, please contact us at <a href="mailto:info@passwordmanager.com">info@passwordmanager.com</a>.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Password Manager. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
